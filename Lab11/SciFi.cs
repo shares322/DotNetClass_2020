@@ -4,13 +4,44 @@ namespace Lab11
 {
     public class SciFi : IMovie
     {
-        public string Title {get; set;}
-        public string Category {get; set;}
-        public void Genre()
+        private string _title;
+        private string _category;
+
+        public string Title
         {
-            Console.WriteLine("Star Wars");
-            Console.WriteLine("The Invisible Man");
+            get
+            {
+                return _title;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Please enter a value");
+                }
+                _title = value;
+            }
         }
-    
+        public string Category
+        {
+            get
+            {
+                return _category;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Please enter a value");
+                }
+                _category = value;
+            }
+        }
+        public SciFi(string title)
+        {
+            Title = title;
+            Category = "SciFi";
+        }
+
     }
 }

@@ -4,31 +4,47 @@ namespace Lab11
 {
     public class Animated : IMovie
     {
-        public string Title { get; set; }
-        public string Category { get; set; }
+        private string _title;
+        private string _category;
 
-        public void Genre()
+        public string Title
         {
-            Console.WriteLine("Frozen");
-            Console.WriteLine("Little Mermaid");
-            Console.WriteLine("Up");
+            get
+            {
+                return _title;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Please enter a value");
+                }
+                _title = value;
+            }
+        }
+        public string Category
+        {
+            get
+            {
+                return _category;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new Exception("Please enter a value");
+                }
+                _category = value;
+            
+            }
+        }
+
+
+        public Animated(string title)
+        {
+            Title = title;
+            Category = "Animated";
         }
 
     }
 }
-//using System;
-//using August6thExamples.Enums;
-
-//namespace August6thExamples.Cars
-//{
-//    public class Rickshaw : IAutomobile
-//    {
-//        public int Mileage { get; set; }
-//        public CarType Type { get; set; }
-
-//        public void VroomVroom()
-//        {
-//            Console.WriteLine("I go vroom vroom not so loud");
-//        }
-//    }
-//}
