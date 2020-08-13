@@ -13,11 +13,15 @@ namespace MockAssessment2
         }
         public static int AddStarWarsCharacters(string[] characterArray)
         {
+            var yodaIndex = -1;
             for (int i = 0; i < characterArray.Length; i++)
             {
-                if (characterArray[i] == "Yoda") return i;
+                if (characterArray[i] == "Yoda")
+                {
+                    yodaIndex = i;
+                } 
             }
-            return 0;
+            return yodaIndex;
         }
 
         public static string DeathStarCombat(Dictionary<string, int> jediName)
